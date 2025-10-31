@@ -53,7 +53,7 @@ const SendEnquiry = () => {
 
   return (
     <>
-      <section className="md:px-10 px-5 mb-5 md:mb-0">
+      <section className="md:px-10 px-2 mb-5 md:mb-0">
         <form className="flex flex-col space-y-10" onSubmit={handleSubmit}>
           <section className="md:flex md:flex-row flex flex-col space-y-10 md:space-y-0 w-full">
             <section className="flex flex-col space-y-2 flex-auto">

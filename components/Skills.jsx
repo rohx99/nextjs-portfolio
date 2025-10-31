@@ -10,7 +10,7 @@ export const metadata = {
 export default function Skills() {
   return (
     <section
-      className="w-full max-h-screen px-5 pb-10 relative scroll-mt-24"
+      className="w-full px-5 pb-10 relative mt-10 md:mt-0 scroll-mt-24"
       id="skills"
     >
       <div className="max-w-7xl mx-auto relative z-10">
@@ -22,7 +22,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <div key={index} className="group relative">
               {/* Card */}
-              <div className="relative bg-cyan-900/20 backdrop-blur-xl rounded-3xl p-6 border border-cyan-500/20 transition-all duration-500 hover:border-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-3 overflow-hidden flex flex-col items-center justify-center h-48 w-48">
+              <div className="relative bg-cyan-900/20 backdrop-blur-xl rounded-3xl p-6 border border-cyan-500/20 transition-all duration-500 hover:border-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-3 overflow-hidden flex flex-col items-center justify-center h-40 w-40 md:h-48 md:w-48">
                 <Image
                   src={skill.image}
                   height={80}

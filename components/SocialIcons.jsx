@@ -41,7 +41,7 @@ const SocialIcons = () => {
         <Link
           title="WhatsApp"
           className="socialContainer containerFour"
-          href={`tel:+917726919634`}
+          href="https://wa.me/+917726919634"
           target="_blank"
           rel="noopener noreferrer"
         >

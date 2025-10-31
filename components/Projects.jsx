@@ -10,23 +10,46 @@ export const metadata = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="w-full py-10 px-5 relative scroll-mt-24">
+    <section
+      id="projects"
+      className="w-full pb-10 px-2 md:px-5 relative scroll-mt-24"
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold text-center text-white mb-8 uppercase tracking-wide">
           Featured Projects
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 place-items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4 place-items-start">
           {projects.map((project) => (
             <div key={project.id} className="group relative w-full">
               {/* Card */}
-              <div className="relative bg-slate-800/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 transition-all duration-500 hover:border-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 overflow-hidden flex flex-col h-full min-h-[400px]">
+              <div className="relative bg-slate-800/50 backdrop-blur-xl rounded-2xl md:p-6 py-4 px-2 border border-slate-700/50 transition-all duration-500 hover:border-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 overflow-hidden flex flex-col h-full min-h-[400px]">
                 {/* Company Logo Placeholder */}
                 <div className="w-20 h-20 bg-cyan-500/20 rounded-full flex items-center justify-center mb-4 mx-auto border border-cyan-500/30">
-                  <span className="text-cyan-300 font-bold text-lg">
-                    {project.company_name.charAt(0).toUpperCase()}
-                  </span>
+                  <Link
+                    href={project.company_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.company_logo && project.company_logo !== "#" ? (
+                      <img
+                        src={project.company_logo}
+                        alt={project.company_name}
+                        className={`w-19 h-19 rounded-full object-contain ${
+                          project.company_name === "Nepal Haat" ||
+                          project.company_name === "Fans To 5K" ||
+                          project.company_name === "YTA School"
+                            ? "bg-black"
+                            : "bg-white"
+                        }`}
+                      />
+                    ) : (
+                      <span className="text-cyan-300 font-bold text-lg">
+                        {project.company_name.charAt(0).toUpperCase()}
+                      </span>
+                    )}
+                  </Link>
                 </div>
 
                 {/* Company Name */}

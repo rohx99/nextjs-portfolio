@@ -9,7 +9,7 @@ import Footer from "@/layout/Footer";
 // });
 
 export const metadata = {
-  title: "Rohit Kumar Yadav - MERN Stack Developer Portfolio",
+  title: "Rohit Kumar Yadav - Software Developer",
   description:
     "Portfolio of Rohit Kumar Yadav, a skilled MERN stack developer with expertise in building robust web applications using MongoDB, Express.js, React, and Node.js.",
 };

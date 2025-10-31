@@ -1,83 +1,50 @@
-"use client";
-
-import Link from "next/link";
-import { Volkhov } from "next/font/google";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Volkhov } from "next/font/google";
+import ActiveNav from "./ActiveNav";
 
 const volkhov = Volkhov({
   subsets: ["latin"],
   weight: ["400"],
 });
 
+// Define navLinks here (static, so server can handle)
+const navLinks = [
+  { id: "intro", label: "Introduction", icon: "/chat-information.png" },
+  { id: "skills", label: "Skills", icon: "/visual-studio-code.png" },
+  { id: "projects", label: "Projects", icon: "/reward-badge.png" },
+  { id: "contact", label: "Let's Connect", icon: "/chat.png" },
+];
+
 export default function Header() {
-  const [activeSection, setActiveSection] = useState("intro");
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const handleScroll = () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 120; // offset for fixed navbar
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-      setActiveSection(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { id: "intro", label: "Introduction", icon: "/chat-information.png" },
-    { id: "skills", label: "Skills", icon: "/visual-studio-code.png" },
-    { id: "projects", label: "Projects", icon: "/bookmark.png" },
-    { id: "contact", label: "Let's Connect", icon: "/chat.png" },
-  ];
-
   return (
     <nav
-      className={`${volkhov.className} w-full p-5 flex justify-between fixed max-w-[1366px] mx-auto bg-black/30 backdrop-blur-sm z-20`}
+      className={`${volkhov.className} w-full p-2 md:p-5 flex justify-between fixed max-w-[1366px] mx-auto bg-black/30 backdrop-blur-sm z-20`}
     >
-      {/* Logo */}
+      {/* Logo - Static */}
       <section>
-        <Image src={"/logo.svg"} width={90} height={100} alt="Logo" />
+        <Image src="/logo.svg" width={90} height={100} alt="Logo" />
       </section>
 
-      {/* Navigation Links */}
-      <section className="space-x-5 tracking-wide flex">
-        {navLinks.map((link) => (
-          <a
-            key={link.id}
-            href={`#${link.id}`}
-            className={`flex items-center px-4 py-1 rounded-xl space-x-2 transition-colors duration-300 ${
-              activeSection === link.id
-                ? "text-cyan-400 bg-white/10"
-                : "text-white hover:text-cyan-300"
-            }`}
-          >
-            <Image src={link.icon} height={28} width={28} alt={link.label} />
-            <span>{link.label}</span>
-          </a>
-        ))}
+      {/* Nav - Pass to client sub-component */}
+      <section className="space-x-5 tracking-wide hidden md:flex">
+        <ActiveNav navLinks={navLinks} />
       </section>
 
-      {/* Resume */}
-      <section className="flex space-x-2">
-        <Link
-          href="#"
-          className="flex text-white border-white/30 bg-white/20 border items-center px-2 pt-1 rounded-xl space-x-2 hover:bg-white/30"
+      {/* Resume - Static */}
+      <section className="flex items-center">
+        <a
+          href="/Rohit Yadav - MERN.pdf"
+          download
+          className="flex text-white border-white/30 bg-white/15 border items-center md:px-4 px-2 py-2 rounded-xl space-x-2 hover:bg-white/20 transition-colors duration-300"
         >
           <Image
-            src={"/email-and-file.png"}
-            height={22}
-            width={22}
+            src="/email-and-file.png"
+            height={27}
+            width={27}
             alt="Download Resume"
           />
           <span>Resume / CV</span>
-        </Link>
+        </a>
       </section>
     </nav>
   );
