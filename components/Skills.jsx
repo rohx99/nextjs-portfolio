@@ -9,14 +9,17 @@ export const metadata = {
 
 export default function Skills() {
   return (
-    <section
-      className="w-full px-5 pb-10 relative mt-10 md:mt-0 scroll-mt-24"
-      id="skills"
-    >
+    <section className="w-full px-5 pb-10 relative scroll-mt-24" id="skills">
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 uppercase tracking-wide">
+        <h2 className="text-3xl font-bold text-center bg-linear-to-br from-[#f4fffd] via-[#88f7ff] to-[#056bd8] bg-clip-text  text-transparent mb-2 uppercase tracking-wide">
           Technical Skills
         </h2>
+
+        <h6 className="text-xs md:text-sm  text-center text-white/80 mb-8 tracking-normal">
+          A comprehensive overview of my technical expertise and the
+          technologies I work with to build modern web applications
+        </h6>
+
         {/* Skills Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 place-items-center">
           {skills.map((skill, index) => (

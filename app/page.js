@@ -1,7 +1,9 @@
+import Competencies from "@/components/Competencies";
 import Contact from "@/components/Contact";
 import Intro from "@/components/Intro";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import Stats from "@/components/Stats";
 
 export const metadata = {
   title: "Rohit Kumar Yadav - Software Developer",
@@ -13,7 +15,9 @@ export default function Home() {
   return (
     <section>
       <Intro />
+      <Stats />
       <Skills />
+      <Competencies />
       <Projects />
       <Contact />
     </section>

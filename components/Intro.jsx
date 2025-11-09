@@ -46,18 +46,13 @@ export default function Intro() {
             </span>
           </h3>
           <p
-            className={`text-base md:text-xl leading-9 tracking-wide ${quintessential.className} text-white/85 md:max-w-3/4 text-center mx-auto`}
+            className={`text-base md:text-xl leading-9 tracking-wide  text-white/85 md:max-w-3/4 text-center mx-auto`}
           >
-            With over one year of industrial experience, I am a proficient MERN
-            stack developer skilled in building robust, scalable web
-            applications. My expertise spans MongoDB, Express.js, React, and
-            Node.js, enabling me to deliver end-to-end solutions efficiently. I
-            am adept at integrating third-party services, optimizing
-            performance, and implementing secure, user-centric features. My
-            practical experience in diverse projects has honed my
-            problem-solving abilities and ensured timely, quality deliveries,
-            making me a confident and knowledgeable developer in the modern web
-            development landscape.
+            MERN stack developer with over one year of industry experience,
+            skilled in building scalable web applications using MongoDB,
+            Express.js, React, and Node.js. I focus on performance, secure
+            features, smooth integrations, and delivering reliable, user-centric
+            solutions.
           </p>
         </section>
       </section>

@@ -13,9 +13,15 @@ export default function Contact() {
       id="contact"
       className="w-full md:px-5 px-2 md:pt-10 md:pb-20 pb-10 relative scroll-mt-24"
     >
-      <h2 className="text-3xl font-bold text-center text-white mb-8 uppercase tracking-wide">
+      <h2 className="text-3xl font-bold text-center bg-linear-to-br from-[#f4fffd] via-[#88f7ff] to-[#056bd8] bg-clip-text  text-transparent mb-2 uppercase tracking-wide">
         Get In Touch
       </h2>
+
+      <h6 className="text-xs md:text-sm  text-center text-white/80 mb-8 tracking-normal">
+        Have a project in mind or want to collaborate? I'd love to hear from
+        you. Let's create something amazing together!
+      </h6>
+
       <section className="flex flex-col md:flex-row justify-between w-full space-y-5 md:space-y-0">
         <section className="md:w-2/5 space-y-5">
           <iframe

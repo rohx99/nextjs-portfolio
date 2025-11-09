@@ -1,12 +1,12 @@
-// import { Great_Vibes } from "next/font/google";
+import { Spectral } from "next/font/google";
 import "./globals.css";
 import Header from "@/layout/Header";
 import Footer from "@/layout/Footer";
 
-// const greatVibes = Great_Vibes({
-//   subsets: ["latin"],
-//   weight: ["400"],
-// });
+const spectral = Spectral({
+  subsets: ["latin"],
+  weight: ["300"],
+});
 
 export const metadata = {
   title: "Rohit Kumar Yadav - Software Developer",
@@ -18,8 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // className={`${greatVibes.className} antialiased text-white relative`}
-        className={`antialiased text-white relative`}
+        className={`${spectral.className} antialiased text-white relative`}
       >
         {/* 🎬 Background Video */}
         <video

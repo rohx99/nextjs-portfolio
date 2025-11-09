@@ -15,9 +15,14 @@ export default function Projects() {
       className="w-full pb-10 px-2 md:px-5 relative scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 uppercase tracking-wide">
+        <h2 className="text-3xl font-bold text-center bg-linear-to-br from-[#f4fffd] via-[#88f7ff] to-[#056bd8] bg-clip-text  text-transparent mb-2 uppercase tracking-wide">
           Featured Projects
         </h2>
+
+        <h6 className="text-xs md:text-sm  text-center text-white/80 mb-8 tracking-normal">
+          A showcase of my work in web development, featuring modern
+          technologies and innovative solutions
+        </h6>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4 place-items-start">
